@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction, createAction, Draft } from "@reduxjs/toolkit";
-import { createMySlice } from './types';
 
 interface ST  {
     a: string,
@@ -19,7 +18,7 @@ const initialState: ST = {
     }
 }
 
-const slice = createSlice({
+export const slice = createSlice({
     name: "slice",
     initialState,
     reducers: {
@@ -33,18 +32,3 @@ const slice = createSlice({
 });
 
 
-export const actions = slice.actions;
-export const reducer = slice.reducer;
-export const setB = slice.actions.setB;
-
-export const myslice = createMySlice(
-    initialState,
-    {
-        setA: (state) => {
-            state.a = 'asdf';
-        },
-        setB: (state) => {
-            state.b = 5;
-        }
-    }
-)
